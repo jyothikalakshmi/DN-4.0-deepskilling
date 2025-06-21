@@ -1,0 +1,24 @@
+step 1: concept of Recursion
+Recursion is a process where a function calls itself to solve smaller parts of the same problem.
+It continues until it reaches a base case (a condition where it stops calling itself).
+
+How Recursion Simplifies Problems?
+-It breaks a big problem into smaller, easier subproblems.
+-It is useful for problems with repeating patterns.
+
+step 4: Analysis
+Time Complexity:
+- The recursive algorithm has a time complexity of O(n), where n is the number of remaining years to forecast.
+- Each recursive call reduces the years by one, and performs a constant amount of work.
+
+Optimization:
+Instead of recursion, we can:
+-->Use iteration (loop):
+We can replace recursion with a loop that repeatedly multiplies the value for each period.
+This avoids many function calls and reduces memory usage.
+-->Apply the direct formula:
+We can directly calculate the future value using the formula:
+!future_value=initial_value×(1+growth_rate)^n! 
+This gives the result in one step, without needing loops or recursion.
+
+
