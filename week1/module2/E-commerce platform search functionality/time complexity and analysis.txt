@@ -1,0 +1,37 @@
+step 1: understand asymptotic notation
+
+Big O notation is used to describe the time or space complexity of an algorithm in terms of input size n.
+It helps in selecting the most efficient algorithm for a given problem.
+Examples:
+O(1) – Constant time
+O(n) – Linear time
+O(log n) – Logarithmic time
+O(n²) – Quadratic time
+
+Linear Search:
+Best case: O(1) -> When the element is found at the beginning.
+Average case: O(n) ->Element is in the middle.
+Worst case: O(n) -> Element is at the end or not present.
+
+Binary Search (on sorted array):
+Best case: O(1) -> Element is at the middle.
+Average case: O(log n) ->Half of the array is eliminated at each step.
+Worst case: O(log n) -> Element is not present after log n steps.
+
+
+step 4:Analysis
+
+Comparison:
+
+ Linear Search:
+  Best: O(1), Average: O(n), Worst: O(n)
+  Works on unsorted data but slow for large inputs.
+
+ Binary Search:
+  Best: O(1), Average/Worst: O(log n)
+  Requires sorted data but is much faster and efficient.
+
+conclusion: For an e-commerce platform, binary search is more efficient and suitable due to its speed and scalability.
+
+
+
