@@ -1,0 +1,8 @@
+BEGIN
+    for rec in (select * from customers where age>60)LOOP
+     update loans 
+     set interest_rate=interest_rate-(interest_rate*0.01)
+     where cid=rec.cid;
+    end loop;
+    commit;
+end;
