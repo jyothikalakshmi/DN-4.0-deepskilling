@@ -1,0 +1,7 @@
+begin
+    for rec in (select l.loanid,l.cid, c.cname, l.due_date from loans l
+    join customers c on c.cid=l.cid
+    where l.DUE_DATE<=sysdate+30)loop
+     dbms_output.put_line('remainder: loan '||rec.loanid ||' for'||rec.cname||' is due on '||to_char(rec.due_date,'dd-mm-yyyy') );
+    end loop;
+end;
