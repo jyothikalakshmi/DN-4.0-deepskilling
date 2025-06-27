@@ -1,0 +1,26 @@
+create table employees(
+    empid int,
+    ename varchar(15),
+     dept_id int,
+     salary number(10,2)
+);
+insert into employees values(1,'alice',101,10000);
+insert into employees values(2,'bob',102,8000);
+insert into employees values(3,'danny',103,9000);
+select * from employees;
+
+create or replace procedure UpdateEmployeesBonus(
+    did in int,
+    bonus in number
+)is
+begin
+    update employees
+    set salary=salary+(salary*bonus/100)
+    where dept_id=did;
+end;
+
+begin
+    UpdateEmployeesBonus(102,10);
+end;
+
+select * from employees;
