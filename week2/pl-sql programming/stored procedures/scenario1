@@ -1,0 +1,20 @@
+create table savings(
+    acc_id int,
+    cid int,
+    balance number(5,2)
+);
+insert into savings values(1,101,200);
+insert into savings values(2,102,700);
+insert into savings values(3,103,500);
+select * from savings;
+
+create or replace  procedure ProcessMonthlyInterest is
+begin
+    update savings
+    set balance=balance+(balance*0.01);
+    commit;
+end;
+begin
+    PROCESSMONTHLYINTEREST;
+end;
+select * from savings;
