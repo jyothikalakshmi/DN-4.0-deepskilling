@@ -1,0 +1,38 @@
+create table accounts(
+    acc_id int primary key,
+    cid int,
+    balance number(10,2)
+);
+insert into accounts values(101,1,1000);
+insert into accounts values(102,2,5000);
+insert into accounts values(103,3,12000);
+select * from accounts;
+
+create or replace procedure TransferFunds(
+    fromacc in int,
+    toacc in int,
+    amount in number
+)is
+ from_balance number(10,2);
+begin
+    select balance into from_balance
+    from ACCOUNTS
+    where acc_id=fromacc;
+
+    if from_balance>amount then
+     update accounts
+     set balance=balance-amount
+     where acc_id=fromacc;
+
+     update ACCOUNTS
+     set balance=balance+amount
+     where acc_id=toacc;
+    else
+       RAISE_APPLICATION_ERROR(-20001, 'Insufficient balance in source account.');
+    end if;
+    end;
+
+BEGIN
+    TransferFunds(103,101,6000);
+end;
+select * from accounts;
