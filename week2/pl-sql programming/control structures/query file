@@ -1,0 +1,22 @@
+create table customers(
+    cid int,
+    cname varchar(15),
+    age int,
+    balance int,
+    IsVIP char(1) default 'N'
+);
+create table loans(
+    loanid int,
+    cid int,
+    interest_rate number(5,2),
+    due_date date
+)
+insert into customers values(1,'alice',55,'N',12000);
+insert into customers values(2,'bob',62,'N',15000);
+insert into customers values(3,'danny',42,'N',9000);
+
+insert into loans values(101,1,8.2,sysdate+15);
+insert into loans values(102,2,9.0,sysdate+45);
+insert into loans values(103,3,6.5,sysdate+25);
+select * from customers;
+select * from loans;
