@@ -1,12 +1,7 @@
 package com.library.service;
 import com.library.repository.BookRepository;
 public class BookService {
-    private BookRepository bookRepository;
-    public void setBookRepository(BookRepository bookRepository){
-        this.bookRepository=bookRepository;
-    }
-    public void addBook(String bookName){
-        System.out.println("add book : "+bookName);
-        bookRepository.saveBook(bookName);
-    }
+   public void greet(){
+       System.out.println("BookService- Spring application setup successfull");
+   }
 }
