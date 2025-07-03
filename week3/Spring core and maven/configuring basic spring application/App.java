@@ -6,6 +6,6 @@ public class App {
     public static void main(String args[]){
         ApplicationContext context= new ClassPathXmlApplicationContext("applicationContext.xml");
         BookService bs= (BookService) context.getBean("bookService");
-        bs.addBook("Spring in action");
+        bs.greet()
     }
 }
