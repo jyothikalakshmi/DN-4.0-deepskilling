@@ -1,0 +1,41 @@
+Java Persistence API (JPA)
+
+JPA (Java Persistence API) is a Java specification (JSR 338) that defines a standard for object-relational mapping (ORM).
+It provides a set of interfaces and annotations to map Java objects to relational database tables.
+->JPA is a specification, not an implementation.
+->It defines a standard way to map Java objects to database tables (ORM).
+->It provides annotations like @Entity, @Id, @OneToMany, etc.
+->JPA requires an implementation to work—Hibernate is one such implementation.
+->It uses EntityManager to manage persistence operations like persist, merge, remove, etc.
+->JPA is included in Java EE but can also be used with Spring or standalone apps.
+->You need to write more boilerplate code for transactions and queries.
+
+Hibernate
+
+Hibernate is an ORM (Object-Relational Mapping) tool that implements the JPA specification.
+It allows Java developers to interact with relational databases using Java objects.
+->Requires a lot of boilerplate code like session management, transactions, etc.
+->Hibernate is a popular implementation of JPA and also provides features beyond JPA.
+->It is an ORM tool that directly maps Java classes to database tables.
+->Provides its own query language—HQL (Hibernate Query Language).
+->It can work with or without JPA—has native APIs like Session, Transaction, etc.
+->Offers powerful features like caching, lazy loading, and batch processing.
+->You have to manage SessionFactory, open/close sessions, handle transactions manually.
+->Has its own configuration files (hibernate.cfg.xml) and annotations.
+
+Spring Data JPA
+
+It is a part of the Spring Data project and provides an abstraction over JPA implementations like Hibernate.
+Reduces boilerplate by providing repositories with CRUD operations out-of-the-box,It manages sessions and transactions automatically, integrating with Spring’s ecosystem.
+->Spring Data JPA is not a JPA implementation—it’s a framework built on top of JPA.
+->It abstracts boilerplate code like repository creation, queries, and transactions.
+->Uses interfaces like JpaRepository, CrudRepository to provide ready-to-use CRUD operations.
+->Works with any JPA implementation (typically Hibernate).
+->Automatically handles session management and transaction boundaries.
+->Supports derived queries (like findByName) using method names—no need to write SQL/HQL.
+->Easily integrates with Spring Boot, making development fast and concise.
+
+
+
+
+
